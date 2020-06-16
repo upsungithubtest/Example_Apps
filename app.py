@@ -11,6 +11,9 @@ flask run --host=0.0.0.0
 python -m flask run --host=0.0.0.0
 
 export FLASK_APP=run.py ; python import_csv.py ; python -m flask run --host=0.0.0.0
+
+gunicorn --bind 0.0.0.0:5000  --log-level=debug app:app
+gunicorn --timeout 120 -w 4 --bind 0.0.0.0:80 -k gevent --log-level=debug app:app
 """
 
 from flask import Flask, render_template
@@ -48,8 +51,6 @@ def friends():
     return render_template('friends_list.html', result=res)
 
 # run the app.
-# gunicorn --bind 0.0.0.0:5000  --log-level=debug app:app
-# gunicorn --timeout 120 -w 4 --bind 0.0.0.0:4146 -k gevent --log-level=debug app:app
 if __name__ == "__main__":
     app.debug = True
     app.run(host='0.0.0.0')
