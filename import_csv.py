@@ -24,6 +24,7 @@ sql = f"""CREATE TABLE IF NOT EXISTS {config.dbname}.friends (
 )"""
 cur.execute(sql)
 
+
 sql = f"TRUNCATE {config.dbname}.friends"
 cur.execute(sql)
 
