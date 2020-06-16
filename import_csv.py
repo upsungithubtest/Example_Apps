@@ -35,6 +35,6 @@ for row in rows:
     print(row[0],row[1])
     sql = f"INSERT INTO {config.dbname}.friends (FirstName,LastName) VALUES (%s,%s)"
     cur.execute(sql,(row[0],row[1]))
-    print(sql)
+    # print(sql)
 
 cnx.commit()
