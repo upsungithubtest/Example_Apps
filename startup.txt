@@ -1,1 +1,1 @@
-export FLASK_APP=run.py ; python import_csv.py ; python -m flask run --host=0.0.0.0
+python import_csv.py ; python app.py
