@@ -3,8 +3,8 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-dbhost = os.getenv("DBHOST", "127.0.0.1")
+dbhost = os.getenv("DBHOST", "mariadb-srv")
 dbname = os.getenv("DBNAME", "abfriends")
-dbuser = os.getenv("BUSER", "devuser")
-dbpass = os.getenv("DBPASS", "devPW")
+dbuser = os.getenv("BUSER", "root")
+dbpass = os.getenv("DBPASS", "VeF86#uU@*Lb")
 
