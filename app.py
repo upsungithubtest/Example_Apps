@@ -10,26 +10,20 @@ export FLASK_APP=run.py
 flask run --host=0.0.0.0
 python -m flask run
 """
-import os
-import ast
-from dotenv import load_dotenv
-load_dotenv()
 
 from flask import Flask, render_template
 import pymysql
+import config
 
 app = Flask(__name__)
 
 
 class Database:
     def __init__(self):
-        dbhost = os.getenv("DBHOST", "127.0.0.1")
-        dbname = os.getenv("DBNAME", "friends")
-        dbuser = os.getenv("BUSER", "devuser")
-        dbpass = os.getenv("DBPASS", "devPW")
 
-        self.con = pymysql.connect(host=dbhost, user=dbuser, password=dbpass, db=dbname, cursorclass=pymysql.cursors.
-                                   DictCursor)
+        self.con = pymysql.connect(host=config.dbhost, user=config.dbuser,
+        password=config.dbpass, db=config.dbname,
+        cursorclass=pymysql.cursors.DictCursor)
         self.cur = self.con.cursor()
 
     def list_employees(self):
