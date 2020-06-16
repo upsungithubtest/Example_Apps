@@ -8,7 +8,7 @@ CREATE TABLE `friends` (
 
 export FLASK_APP=run.py
 flask run --host=0.0.0.0
-python -m flask run
+python -m flask run --host=0.0.0.0
 """
 
 from flask import Flask, render_template
