@@ -14,7 +14,11 @@ cur = cnx.cursor()
 # cur.execute("SELECT FirstName, LastName FROM friends LIMIT 50")
 sql = f"CREATE DATABASE IF NOT EXISTS {config.dbname}"
 print(sql)
-cur.execute(sql)
+
+try:
+  cur.execute(sql)
+except:
+  print('Unable to create database. It may exist.')
 
 sql = f"""CREATE TABLE IF NOT EXISTS {config.dbname}.friends (
   `id` int(11) NOT NULL AUTO_INCREMENT,
