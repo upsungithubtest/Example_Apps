@@ -1,0 +1,8 @@
+template: 'python-flask'
+env:
+  - name: APP_NAME
+    value: "Flask-Example"
+command:
+  - pip install -r requirements.txt
+  - python import_csv.py
+  - python app.py
