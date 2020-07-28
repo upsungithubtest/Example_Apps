@@ -47,12 +47,14 @@ def friends():
         return emps
 
     res = db_query()
+    name = config.app_name
 
-    return render_template('friends_list.html', result=res)
+    return render_template('friends_list.html', result=res, app_name=name)
+
 
 # run the app.
 if __name__ == "__main__":
     app.debug = True
-    app.run(host='0.0.0.0', port=4146)
+    app.run(host='0.0.0.0', port=5000)
 
 
