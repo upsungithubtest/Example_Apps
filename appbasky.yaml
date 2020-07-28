@@ -1,4 +1,4 @@
-template: 'python-flask'
+template: 'python'
 env:
   - name: APP_NAME
     value: "Flask-Example"
