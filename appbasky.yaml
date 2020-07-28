@@ -1,5 +1,6 @@
 template: 'python'
 framework: 'flask'
+image: 'python:3.7-buster'
 env:
   - name: APP_NAME
     value: "Flask-Example"
