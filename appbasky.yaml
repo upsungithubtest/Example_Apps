@@ -1,4 +1,5 @@
 template: 'python'
+framework: 'flask'
 env:
   - name: APP_NAME
     value: "Flask-Example"
