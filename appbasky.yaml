@@ -1,10 +1,10 @@
-template: 'python'
-framework: 'flask'
-image: 'python:3.7-buster'
+runtime: 'python37'
+
 env:
   - name: APP_NAME
     value: "Flask-Example"
-command:
+    
+entrypoint:
   - pip install -r requirements.txt
   - python import_csv.py
   - python app.py
